@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- net8.0-windows is the current LTS; the -windows suffix is required for
+         the Windows Registry APIs used in MumbleUpdater.cs. -->
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <AssemblyName>MumbleUpdater</AssemblyName>
+    <RootNamespace>MumbleUpdater</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <AssemblyTitle>Mumble Updater</AssemblyTitle>
+    <Product>Mumble</Product>
+    <Company>Mumble VoIP</Company>
+    <Copyright>Copyright The Mumble Developers. All rights reserved.</Copyright>
+    <Description>Standalone updater that checks for and installs the latest Mumble release.</Description>
+  </PropertyGroup>
+
+  <!-- Exclude the WixSharp-based installer scripts that live alongside this
+       project file; they are not part of the updater build. -->
+  <ItemGroup>
+    <Compile Remove="ClientInstaller.cs" />
+    <Compile Remove="ServerInstaller.cs" />
+    <Compile Remove="MumbleInstall.cs" />
+  </ItemGroup>
+
+</Project>

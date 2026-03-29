@@ -51,3 +51,7 @@ compile_commands.json
 __pycache__/
 CMakeSettings.json
 CLAUDE.md
+
+# .NET build output
+installer/bin/
+installer/obj/
